@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Business Card</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+           max-width: 520px; margin: 0 auto; padding: 28px; line-height: 1.5; }
+    .card { border: 1px solid #eee; border-radius: 16px; padding: 20px; }
+    .avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 1px solid #eee; }
+    h1 { margin: 14px 0 6px; font-size: 26px; }
+    .sub { color: #666; margin: 0 0 16px; }
+    .btns a { display: block; text-decoration: none; border: 1px solid #ddd; padding: 12px 14px;
+              border-radius: 12px; margin: 10px 0; }
+    .hint { color:#888; font-size: 13px; margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="avatar" src="https://placehold.co/192x192" alt="avatar" />
+    <h1>你的名字</h1>
+    <p class="sub">職稱 / 公司</p>
+
+    <div class="btns">
+      <a href="tel:+886912345678">📞 打電話：+886 912 345 678</a>
+      <a href="mailto:you@example.com">✉️ 寄信：you@example.com</a>
+      <a href="https://line.me/ti/p/~yourlineid">💬 LINE：yourlineid</a>
+      <a href="https://www.linkedin.com/in/yourid/">💼 LinkedIn</a>
+      <a href="https://instagram.com/yourid">📷 Instagram</a>
+
+      <!-- 之後可以加 vCard：把你的 contact.vcf 放到 repo，這行就會下載它 -->
+      <!-- <a href="./contact.vcf" download>💾 一鍵儲存到通訊錄（vCard）</a> -->
+    </div>
+
+    <p class="hint">提示：把 NFC 寫入這個頁面的網址即可。</p>
+  </div>
+</body>
+</html>
