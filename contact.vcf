@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Wang;Wen-Hsi;;;
+FN:Wen-Hsi Wang
+ORG:Your Company
+TITLE:Your Title
+TEL;TYPE=CELL:+886912345678
+EMAIL:you@example.com
+URL:https://yourname.github.io/digital-card/
+NOTE:Digital Business Card
+END:VCARD
