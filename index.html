@@ -4,89 +4,137 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Digital Business Card</title>
+
   <style>
     body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 28px;
-  line-height: 1.5;
-  background: #fff9db;
-}
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 28px;
+      line-height: 1.5;
+      background: #fff9db;
+    }
 
-.card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 26px 22px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border: 3px solid #FFED97;
-}
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 18px 22px 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border: 3px solid #FFED97;
+    }
 
-.avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #FFED97;
-  display: block;
-  margin: 0 auto;
-}
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 6px;
+    }
 
-h1 {
-  margin: 16px 0 6px;
-  font-size: 28px;
-  text-align: center;
-}
+    .langbtn {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 10px;
+    }
 
-.sub {
-  color: #888;
-  text-align: center;
-  margin-bottom: 22px;
-}
+    .langbtn:hover {
+      background: rgba(255, 237, 151, 0.45);
+    }
 
-.btns a {
-  display: block;
-  text-decoration: none;
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin: 12px 0;
-  background: #FFED97;
-  color: #5f4b00;
-  font-weight: 500;
-  text-align: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-}
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #FFED97;
+      display: block;
+      margin: 6px auto 0;
+    }
 
-.btns a:hover {
-  background: #ffe066;
-  transform: translateY(-2px);
-}
+    h1 {
+      margin: 16px 0 6px;
+      font-size: 28px;
+      text-align: center;
+      color: #2b2b2b;
+    }
 
-.hint {
-  color: #aaa;
-  text-align: center;
-  font-size: 12px;
-  margin-top: 16px;
-}
+    .sub {
+      color: #777;
+      text-align: center;
+      margin: 0 0 22px;
+    }
+
+    .btns a {
+      display: block;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      background: #FFED97;
+      color: #5f4b00;
+      font-weight: 600;
+      text-align: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .btns a:hover {
+      background: #ffe066;
+      transform: translateY(-2px);
+    }
+
+    .hint {
+      color: #aaa;
+      text-align: center;
+      font-size: 12px;
+      margin-top: 16px;
+    }
   </style>
 </head>
+
 <body>
   <div class="card">
+    <div class="topbar">
+      <button class="langbtn" type="button" onclick="switchLang()" aria-label="Switch language">🌐</button>
+    </div>
+
     <img class="avatar" src="./assets/avatar.jpg" alt="avatar" />
-    <h1>美樂蒂</h1>
-    <p class="sub">蛋糕師 / 三麗鷗</p>
+
+    <h1 data-zh="美樂蒂" data-en="My Melody"></h1>
+    <p class="sub" data-zh="蛋糕師 / 三麗鷗" data-en="Pastry Chef / Sanrio"></p>
 
     <div class="btns">
-      <a href="tel:+886912345678">📞 打電話：+886 912 345 678</a>
-      <a href="mailto:you@example.com">✉️ 寄信：you@example.com</a>
-      <a href="https://line.me/ti/p/~yourlineid">💬 LINE：yourlineid</a>
-      <a href="https://www.linkedin.com/in/yourid/">💼 LinkedIn</a>
-      <a href="https://instagram.com/yourid">📷 Instagram</a>
-
-      <!-- 之後可以加 vCard：把你的 contact.vcf 放到 repo，這行就會下載它 -->
-      <a href="./contact.vcf">💾 一鍵儲存到通訊錄（Save Contact）</a>
+      <a href="tel:+886912345678" data-zh="📞 打電話：+886 912 345 678" data-en="📞 Call: +886 912 345 678"></a>
+      <a href="mailto:you@example.com" data-zh="✉️ 寄信：you@example.com" data-en="✉️ Email: you@example.com"></a>
+      <a href="https://line.me/ti/p/~yourlineid" data-zh="💬 LINE：yourlineid" data-en="💬 LINE: yourlineid"></a>
+      <a href="https://www.linkedin.com/in/yourid/" data-zh="💼 LinkedIn" data-en="💼 LinkedIn"></a>
+      <a href="https://instagram.com/yourid" data-zh="📷 Instagram" data-en="📷 Instagram"></a>
+      <a href="./contact.vcf" data-zh="💾 一鍵儲存到通訊錄（Save Contact）" data-en="💾 Save Contact (vCard)"></a>
     </div>
+
+    <p class="hint" data-zh="提示：把 NFC 寫入這個頁面的網址即可。" data-en="Tip: Write this page URL into your NFC tag."></p>
   </div>
+
+  <script>
+    // default language: Chinese for zh* locales, otherwise English
+    let currentLang = navigator.language && navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+
+    function applyLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-zh]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+      document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+    }
+
+    function switchLang() {
+      applyLang(currentLang === 'zh' ? 'en' : 'zh');
+    }
+
+    applyLang(currentLang);
+  </script>
 </body>
 </html>
