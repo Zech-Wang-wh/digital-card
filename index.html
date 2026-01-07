@@ -7,14 +7,14 @@
 
   <style>
     :root{
-      --theme: #FFED97;
+      --theme:#FFED97;
       --theme2:#ffe066;
-      --bg: #0b1116;
-      --ink: #fff;
-      --muted: rgba(255,255,255,.78);
-      --muted2: rgba(255,255,255,.58);
-      --stroke: rgba(255,255,255,.14);
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
+      --bg:#0b1116;
+      --ink:#fff;
+      --muted:rgba(255,255,255,.78);
+      --muted2:rgba(255,255,255,.58);
+      --stroke:rgba(255,255,255,.14);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
     }
 
     *{ box-sizing:border-box; }
@@ -27,47 +27,40 @@
       color:var(--ink);
     }
 
-    .wrap{
-      max-width: 520px;
-      margin: 0 auto;
-      padding: 14px 14px 28px;
-    }
+    .wrap{ max-width:520px; margin:0 auto; padding:14px 14px 28px; }
 
     /* ===== 主卡（整張像 App 介面） ===== */
     .shell{
-      border-radius: 28px;
+      border-radius:28px;
       overflow:hidden;
-      border: 3px solid rgba(255,237,151,.55);
-      box-shadow: var(--shadow);
+      border:3px solid rgba(255,237,151,.55);
+      box-shadow:var(--shadow);
       background:#000;
       position:relative;
-      min-height: 760px;
+      min-height:780px;
     }
 
-    /* 背景圖 + 暗化漸層，做出截圖那種氛圍 */
+    /* 背景圖 + 暗化漸層（像你截圖那樣） */
     .bg{
       position:absolute; inset:0;
       background:
-        radial-gradient(900px 500px at 50% 25%, rgba(0,0,0,.25), rgba(0,0,0,.75)),
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55) 45%, rgba(0,0,0,.78)),
+        radial-gradient(900px 500px at 50% 25%, rgba(0,0,0,.15), rgba(0,0,0,.75)),
+        linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.58) 45%, rgba(0,0,0,.82)),
         url("./assets/hero.jpg");
       background-size:cover;
       background-position:center;
-      filter: contrast(1.05) saturate(1.05);
-      transform: scale(1.02);
+      filter:contrast(1.05) saturate(1.05);
+      transform:scale(1.02);
     }
 
-    .inner{
-      position:relative;
-      padding: 16px 16px 18px;
-    }
+    .inner{ position:relative; padding:16px 16px 18px; }
 
     /* ===== 頂部列：品牌 + 下載APP + 地球 ===== */
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
+      gap:12px;
     }
     .brand{
       display:flex;
@@ -78,49 +71,43 @@
       opacity:.95;
     }
     .brand .mark{
-      width: 28px; height: 28px;
-      border-radius: 9px;
-      border: 2px solid rgba(255,237,151,.6);
-      background: rgba(255,255,255,.06);
-      backdrop-filter: blur(10px);
-      display:grid;
-      place-items:center;
-      font-size: 14px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      width:28px; height:28px;
+      border-radius:9px;
+      border:2px solid rgba(255,237,151,.6);
+      background:rgba(255,255,255,.06);
+      backdrop-filter:blur(10px);
+      display:grid; place-items:center;
+      font-size:14px;
+      box-shadow:0 10px 24px rgba(0,0,0,.35);
     }
-    .actions{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-    }
+    .actions{ display:flex; gap:10px; align-items:center; }
     .btn-app{
       font-size:13px;
-      font-weight:800;
+      font-weight:900;
       color:#101010;
-      background: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 12px;
-      padding: 10px 12px;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:12px;
+      padding:10px 12px;
       text-decoration:none;
-      box-shadow: 0 10px 24px rgba(0,0,0,.30);
+      box-shadow:0 10px 24px rgba(0,0,0,.30);
     }
     .btn-icon{
-      width: 40px; height: 40px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.10);
-      backdrop-filter: blur(12px);
+      width:40px; height:40px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.10);
+      backdrop-filter:blur(12px);
       color:#fff;
-      display:grid;
-      place-items:center;
+      display:grid; place-items:center;
       cursor:pointer;
-      box-shadow: 0 10px 24px rgba(0,0,0,.30);
+      box-shadow:0 10px 24px rgba(0,0,0,.30);
     }
-    .btn-icon:hover{ border-color: rgba(255,237,151,.7); }
+    .btn-icon:hover{ border-color:rgba(255,237,151,.7); }
 
     /* ===== 頭像置中（浮在封面上） ===== */
     .profile{
-      margin-top: 38px;
+      margin-top:38px;
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -128,37 +115,278 @@
     }
     .avatar-wrap{
       position:relative;
-      width: 154px;
-      height: 154px;
-      border-radius: 999px;
-      border: 5px solid rgba(255,255,255,.85);
-      overflow:hidden;
-      box-shadow: 0 14px 34px rgba(0,0,0,.45);
-      background: rgba(255,255,255,.06);
-    }
-    .avatar{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .check{
-      position:absolute;
-      right: 12px;
-      bottom: 12px;
-      width: 30px;
-      height: 30px;
+      width:154px; height:154px;
       border-radius:999px;
-      background: rgba(0, 0, 0, .35);
-      border: 2px solid rgba(255,255,255,.65);
+      border:5px solid rgba(255,255,255,.85);
+      overflow:hidden;
+      box-shadow:0 14px 34px rgba(0,0,0,.45);
+      background:rgba(255,255,255,.06);
+    }
+    .avatar{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* 右下角小勾勾徽章（主題色） */
+    .badge{
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      width:32px; height:32px;
+      border-radius:999px;
+      background:rgba(0,0,0,.35);
+      border:2px solid rgba(255,255,255,.65);
+      box-shadow:0 12px 24px rgba(0,0,0,.35);
       display:grid;
       place-items:center;
-      box-shadow: 0 12px 24px rgba(0,0,0,.35);
     }
-    .check::before{
-      content:"";
-      width: 18px; height: 18px;
+    .badge .dot{
+      width:20px; height:20px;
       border-radius:999px;
-      background: var(--theme);
-      display:block;
-      mask: radial-gradient(circle at 35% 55%, transparent 0
+      background:var(--theme);
+      display:grid; place-items:center;
+      color:#5f4b00;
+      font-weight:1000;
+      font-size:14px;
+      line-height:1;
+    }
+
+    .name{
+      margin-top:16px;
+      font-size:30px;
+      font-weight:1000;
+      letter-spacing:.6px;
+      text-shadow:0 12px 28px rgba(0,0,0,.55);
+    }
+    .subtitle{
+      margin-top:8px;
+      color:var(--muted);
+      font-weight:800;
+      text-shadow:0 12px 28px rgba(0,0,0,.55);
+    }
+
+    /* ===== 三顆 pill 按鈕 ===== */
+    .pills{
+      margin-top:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+    }
+    .pill{
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.22);
+      background:rgba(0,0,0,.35);
+      backdrop-filter:blur(12px);
+      color:#fff;
+      text-decoration:none;
+      box-shadow:0 10px 28px rgba(0,0,0,.35);
+      transition:transform .18s ease, border-color .18s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-weight:1000;
+    }
+    .pill:hover{ transform:translateY(-2px); border-color:rgba(255,237,151,.7); }
+
+    .pill.primary{ padding:12px 18px; }
+    .pill.small{ width:54px; height:50px; }
+
+    .ico{
+      width:34px; height:34px;
+      border-radius:999px;
+      display:grid; place-items:center;
+      background:rgba(255,237,151,.18);
+      border:1px solid rgba(255,237,151,.55);
+      color:var(--theme);
+      font-size:16px;
+    }
+
+    /* ===== 下方玻璃霧面大卡 ===== */
+    .glass{
+      margin-top:22px;
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(12, 20, 26, .55);
+      backdrop-filter:blur(18px);
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+    .glass-inner{ padding:18px 18px 10px; }
+    .h2{
+      font-size:22px;
+      font-weight:1000;
+      margin:8px 0 12px;
+      letter-spacing:.5px;
+    }
+    .desc{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .more{
+      display:inline-block;
+      margin-top:10px;
+      color:var(--theme);
+      font-weight:1000;
+      text-decoration:none;
+    }
+    .divider{
+      height:1px;
+      background:rgba(255,255,255,.14);
+      margin:14px 0 12px;
+    }
+
+    /* ===== 社群列表（白底卡片） ===== */
+    .list{ padding:0 18px 18px; }
+    .item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.94);
+      color:#121212;
+      text-decoration:none;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      border:2px solid rgba(255,237,151,.55);
+      margin-top:12px;
+      transition:transform .18s ease;
+    }
+    .item:hover{ transform:translateY(-2px); }
+    .item-left{ display:flex; align-items:center; gap:12px; font-weight:1000; }
+    .appicon{
+      width:36px; height:36px;
+      border-radius:12px;
+      display:grid; place-items:center;
+      background:rgba(255,237,151,.55);
+      border:1px solid rgba(0,0,0,.08);
+      color:#5f4b00;
+      font-weight:1000;
+    }
+    .arrow{ color:rgba(0,0,0,.45); font-weight:1000; }
+
+    .foot{
+      margin-top:14px;
+      text-align:center;
+      color:var(--muted2);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="shell">
+      <div class="bg"></div>
+
+      <div class="inner">
+        <div class="topbar">
+          <div class="brand">
+            <div class="mark">◎</div>
+            <div>MELODY CARD</div>
+          </div>
+
+          <div class="actions">
+            <a class="btn-app" href="#" onclick="return false;">下載APP</a>
+            <button class="btn-icon" type="button" title="Language" onclick="toggleLang()">🌐</button>
+          </div>
+        </div>
+
+        <div class="profile">
+          <div class="avatar-wrap">
+            <img class="avatar" src="./assets/avatar.jpg" alt="avatar" />
+            <div class="badge"><div class="dot">✓</div></div>
+          </div>
+
+          <div class="name" data-zh="美樂蒂" data-en="My Melody"></div>
+          <div class="subtitle" data-zh="專屬於你的電子名片" data-en="Your Digital Business Card"></div>
+
+          <div class="pills">
+            <a class="pill primary" href="./contact.vcf">
+              <span class="ico">👤</span>
+              <span data-zh="儲存聯絡人" data-en="Save Contact"></span>
+            </a>
+            <a class="pill small" href="mailto:you@example.com" title="Message">
+              <span class="ico">💬</span>
+            </a>
+            <a class="pill small" href="#" onclick="alert('這顆可換成你的行事曆/預約連結');return false;" title="Calendar">
+              <span class="ico">🗓️</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass">
+          <div class="glass-inner">
+            <div class="h2" data-zh="服務簡介" data-en="About"></div>
+            <p class="desc"
+              data-zh="美樂蒂電子名片是一種可以在手機上儲存、分享與管理的數位名片，用 NFC 一碰就能打開，並可一鍵存入聯絡人。"
+              data-en="A modern digital card you can store, share, and manage. Tap via NFC to open instantly and save contact in one click.">
+            </p>
+
+            <a class="more" href="#" onclick="alert('這裡可以連到你的更多介紹頁');return false;"
+              data-zh="更多" data-en="More"></a>
+
+            <div class="divider"></div>
+
+            <div class="h2" style="margin:10px 0 0;" data-zh="社群媒體" data-en="Social"></div>
+          </div>
+
+          <div class="list">
+            <a class="item" href="https://example.com" target="_blank" rel="noopener">
+              <div class="item-left">
+                <div class="appicon">🔗</div>
+                <div data-zh="官方網站 Official Website" data-en="Official Website"></div>
+              </div>
+              <div class="arrow">›</div>
+            </a>
+
+            <a class="item" href="https://instagram.com/yourid" target="_blank" rel="noopener">
+              <div class="item-left">
+                <div class="appicon">📷</div>
+                <div>Instagram</div>
+              </div>
+              <div class="arrow">›</div>
+            </a>
+
+            <a class="item" href="https://line.me/ti/p/~yourlineid" target="_blank" rel="noopener">
+              <div class="item-left">
+                <div class="appicon">💬</div>
+                <div>LINE</div>
+              </div>
+              <div class="arrow">›</div>
+            </a>
+
+            <a class="item" href="tel:+886912345678">
+              <div class="item-left">
+                <div class="appicon">📞</div>
+                <div data-zh="撥打電話" data-en="Call"></div>
+              </div>
+              <div class="arrow">›</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="foot" data-zh="主題色：#FFED97 ｜ NFC 一碰即可開啟" data-en="Theme: #FFED97 ｜ Tap via NFC to open"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let lang = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+
+    function applyLang(){
+      document.querySelectorAll('[data-zh]').forEach(el=>{
+        el.textContent = (lang === 'zh') ? el.dataset.zh : el.dataset.en;
+      });
+      document.documentElement.lang = (lang === 'zh') ? 'zh-Hant' : 'en';
+    }
+
+    function toggleLang(){
+      lang = (lang === 'zh') ? 'en' : 'zh';
+      applyLang();
+    }
+
+    applyLang();
+  </script>
+</body>
+</html>
