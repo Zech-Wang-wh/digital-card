@@ -1,21 +1,15 @@
 BEGIN:VCARD
 VERSION:3.0
-N:美樂蒂;;;;
-FN:美樂蒂
-ORG:三麗鷗
-TITLE:蛋糕師
-TEL;TYPE=CELL:+886912345678
-EMAIL:you@example.com
-NOTE:中文名片
-END:VCARD
-
-BEGIN:VCARD
-VERSION:3.0
-N:Melody;;;;
-FN:Melody
-ORG:Sanrio
-TITLE:Pastry Chef
-TEL;TYPE=CELL:+886912345678
-EMAIL:you@example.com
-NOTE:English Business Card
+N:王;文熙;;;
+FN:王文熙
+X-PHONETIC-FIRST-NAME:文熙
+X-PHONETIC-LAST-NAME:王
+ORG:安永諮詢服務股份有限公司;數據分析和數位新興科技／諮詢服務
+TITLE:顧問
+TEL;TYPE=WORK,VOICE:+886277569435
+TEL;TYPE=WORK,VOICE:+886227578888
+EMAIL;TYPE=WORK:Zech.WH.Wang@tw.ey.com
+ADR;TYPE=WORK:;;台北市信義區基隆路一段333號8樓;台北市;11012;台灣
+URL:https://line.me/R/ti/p/MEqkvHs-qV
+NOTE:LINE: https://line.me/R/ti/p/MEqkvHs-qV\n統一編號: 54177736
 END:VCARD
