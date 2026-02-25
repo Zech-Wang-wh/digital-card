@@ -39,9 +39,9 @@
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(1100px 700px at 15% -10%, rgba(254,230,0,.08), transparent 55%),
-        radial-gradient(900px 600px at 85% 0%, rgba(45,45,57,.55), transparent 58%),
-        linear-gradient(180deg, #050612, var(--bg1) 45%, #050612);
+        radial-gradient(1100px 700px at 15% -10%, rgba(254,230,0,.10), transparent 55%), /* 調整黃色光斑亮度 */
+        radial-gradient(900px 600px at 85% 0%, rgba(45,45,57,.40), transparent 58%), /* 調整品牌藍光斑亮度 */
+        linear-gradient(180deg, #101322 0%, #1c2033 45%, #101322); /* 將最底層顏色從 #050612 提升到更亮的深色 */
       overflow-x:hidden;
     }
 
@@ -80,67 +80,25 @@
     }
 
     /* ===== Consulting-tech background (more visible on mobile) ===== */
-    .bg{
+   .bg{
       position:absolute;
       inset:0;
-    
+      
+      /* 簡單的深藍底，增加一點點頂部的亮點，模擬專業感 */
       background:
-        /* warm EY gold spotlight */
         radial-gradient(
-          900px 700px at 18% 18%,
-          rgba(254,230,0,.14) 0%,
-          rgba(254,230,0,.06) 38%,
-          transparent 70%
+          800px 600px at 50% 0%,
+          rgba(45, 45, 57, .30) 0%, /* 品牌藍 */
+          transparent 60%
         ),
     
-        /* cool tech spotlight */
-        radial-gradient(
-          1000px 800px at 86% 42%,
-          rgba(120,160,255,.14) 0%,
-          rgba(120,160,255,.06) 40%,
-          transparent 72%
-        ),
-    
-        /* base gradient (a bit brighter than before) */
         linear-gradient(
           180deg,
-          #14172a 0%,
-          #101326 45%,
-          #0b0d18 100%
+          #0A0C14 0%, /* 比原來的更深一點，讓內容更突出 */
+          #070810 100%
         );
     
       z-index:-2;
-    }
-    
-    /* ===== subtle texture + gentle diagonal sheen ===== */
-    .bg:after{
-      content:"";
-      position:absolute;
-      inset:0;
-    
-      background:
-        /* diagonal sheen (make it noticeable but still soft) */
-        linear-gradient(
-          120deg,
-          transparent 0%,
-          rgba(255,255,255,.06) 46%,
-          rgba(255,255,255,.10) 50%,
-          rgba(255,255,255,.06) 54%,
-          transparent 66%
-        ),
-    
-        /* faint grain lines to avoid "flat" look */
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,255,255,.035) 0px,
-          rgba(255,255,255,.035) 1px,
-          transparent 1px,
-          transparent 7px
-        );
-    
-      opacity:.22;
-      mix-blend-mode: overlay;
-      pointer-events:none;
     }
 
     .inner{ position:relative; padding:18px 16px 18px; }
