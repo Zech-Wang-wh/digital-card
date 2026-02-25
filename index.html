@@ -79,25 +79,56 @@
       opacity:.55;
     }
 
-    /* ===== Black Gold Marble Background ===== */
+    /* ===== Tech dark background (consulting style) ===== */
     .bg{
+      position:absolute; 
+      inset:0;
+    
+      background:
+        /* subtle EY yellow glow */
+        radial-gradient(
+          900px 500px at 15% -10%, 
+          rgba(254,230,0,.05), 
+          transparent 70%
+        ),
+    
+        /* cool tech blue balance */
+        radial-gradient(
+          800px 500px at 85% 10%, 
+          rgba(120,160,255,.05), 
+          transparent 75%
+        ),
+    
+        /* main dark gradient */
+        linear-gradient(
+          180deg, 
+          #0c0f1a 0%, 
+          #0a0d16 45%, 
+          #07090f 100%
+        );
+    
+      z-index:-2;
+    }
+    
+    
+    /* ===== ultra subtle light streak ===== */
+    .bg:after{
+      content:"";
       position:absolute;
       inset:0;
     
       background:
         linear-gradient(
-          rgba(0,0,0,.2),
-          rgba(0,0,0,.4)
-        ),
-        url("./bg.png");
+          120deg,
+          transparent 0%,
+          rgba(255,255,255,.03) 45%,
+          rgba(255,255,255,.05) 48%,
+          rgba(255,255,255,.03) 52%,
+          transparent 60%
+        );
     
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    
-      filter: saturate(1.1) contrast(1.05);
-      transform: scale(1.05);
-      z-index:-2;
+      opacity:.35;
+      pointer-events:none;
     }
 
     .inner{ position:relative; padding:18px 16px 18px; }
