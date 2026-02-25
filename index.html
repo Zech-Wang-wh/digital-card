@@ -79,68 +79,51 @@
       opacity:.55;
     }
 
-    /* ===== Consulting-tech background (more visible on mobile) ===== */
-    .bg{
-      position:absolute;
-      inset:0;
-    
+    /* ===== 修改後的專業科技感背景 ===== */
+    .bg {
+      position: absolute;
+      inset: 0;
+      /* 改用深午夜藍與炭黑的漸層，避開純黑產生的沉悶感 */
       background:
-        /* warm EY gold spotlight */
+        /* 左上角：安永品牌黃色的微弱光暈 (Soft Glow) */
         radial-gradient(
-          900px 700px at 18% 18%,
-          rgba(254,230,0,.14) 0%,
-          rgba(254,230,0,.06) 38%,
-          transparent 70%
+          circle at 20% 10%,
+          rgba(254, 230, 0, 0.12) 0%,
+          transparent 40%
         ),
-    
-        /* cool tech spotlight */
+        /* 右下角：科技藍光暈，平衡視覺感 */
         radial-gradient(
-          1000px 800px at 86% 42%,
-          rgba(120,160,255,.14) 0%,
-          rgba(120,160,255,.06) 40%,
-          transparent 72%
+          circle at 80% 80%,
+          rgba(45, 120, 255, 0.08) 0%,
+          transparent 50%
         ),
-    
-        /* base gradient (a bit brighter than before) */
+        /* 基底色調：從深藍到炭黑的垂直漸層 */
         linear-gradient(
-          180deg,
-          #14172a 0%,
-          #101326 45%,
-          #0b0d18 100%
+          165deg,
+          #1a1d2e 0%,
+          #111421 40%,
+          #0a0c14 100%
         );
-    
-      z-index:-2;
+      z-index: -2;
     }
     
-    /* ===== subtle texture + gentle diagonal sheen ===== */
-    .bg:after{
-      content:"";
-      position:absolute;
-      inset:0;
-    
-      background:
-        /* diagonal sheen (make it noticeable but still soft) */
-        linear-gradient(
-          120deg,
-          transparent 0%,
-          rgba(255,255,255,.06) 46%,
-          rgba(255,255,255,.10) 50%,
-          rgba(255,255,255,.06) 54%,
-          transparent 66%
-        ),
-    
-        /* faint grain lines to avoid "flat" look */
-        repeating-linear-gradient(
-          0deg,
-          rgba(255,255,255,.035) 0px,
-          rgba(255,255,255,.035) 1px,
-          transparent 1px,
-          transparent 7px
-        );
-    
-      opacity:.22;
-      mix-blend-mode: overlay;
-      pointer-events:none;
+    .bg:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* 移除原本的橫線，改用「數位網格 (Data Grid)」展現數據分析感 */
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px; /* 網格大小 */
+      
+      /* 加入一道柔和的掃描斜光，增加動態深度 */
+      mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+      background-attachment: fixed;
+      
+      /* 混合模式調整為更乾淨的顯示 */
+      opacity: 0.4;
+      pointer-events: none;
     }
 
     .inner{ position:relative; padding:18px 16px 18px; }
