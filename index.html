@@ -79,69 +79,24 @@
       opacity:.55;
     }
 
-    /* Hero background image + dark overlay */
-    /* ===== Black-Gold premium background (no image) ===== */
+    /* ===== Black Gold Marble Background ===== */
     .bg{
-      position:absolute; inset:0;
+      position:absolute;
+      inset:0;
+    
       background:
-        /* gold glow (top-left) */
-        radial-gradient(720px 520px at 18% 12%,
-          rgba(254,230,0,.18) 0%,
-          rgba(254,230,0,.06) 38%,
-          transparent 70%),
+        linear-gradient(
+          rgba(0,0,0,.55),
+          rgba(0,0,0,.65)
+        ),
+        url("./bg.png");
     
-        /* warm gold sheen (top center) */
-        radial-gradient(900px 520px at 55% 6%,
-          rgba(255,214,120,.14) 0%,
-          rgba(255,214,120,.05) 35%,
-          transparent 72%),
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     
-        /* deep brand blue lift (right) */
-        radial-gradient(900px 680px at 88% 30%,
-          rgba(45,45,57,.75) 0%,
-          rgba(45,45,57,.22) 55%,
-          transparent 78%),
-    
-        /* base gradient (not too black) */
-        linear-gradient(180deg,
-          #151525 0%,
-          #10111d 40%,
-          #0b0d17 100%);
-    
-      transform:scale(1.02);
+      transform: scale(1.05);
       z-index:-2;
-    }
-    
-    /* subtle texture + diagonal highlight (premium feel) */
-    .bg:after{
-      content:"";
-      position:absolute; inset:0;
-    
-      background:
-        /* diagonal metallic sweep */
-        linear-gradient(120deg,
-          transparent 0%,
-          rgba(254,230,0,.09) 14%,
-          transparent 32%,
-          rgba(255,255,255,.06) 44%,
-          transparent 58%),
-    
-        /* fine noise (CSS-only) */
-        repeating-linear-gradient(0deg,
-          rgba(255,255,255,.04) 0px,
-          rgba(255,255,255,.04) 1px,
-          transparent 1px,
-          transparent 6px),
-    
-        repeating-linear-gradient(90deg,
-          rgba(255,255,255,.03) 0px,
-          rgba(255,255,255,.03) 1px,
-          transparent 1px,
-          transparent 7px);
-    
-      opacity:.12;
-      mix-blend-mode: overlay;
-      pointer-events:none;
     }
 
     .inner{ position:relative; padding:18px 16px 18px; }
