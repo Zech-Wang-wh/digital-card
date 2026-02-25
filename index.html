@@ -354,6 +354,29 @@
       .btn-icon, .pill, .item{ transition:none; }
       .pill:hover, .item:hover, .btn-icon:hover{ transform:none; }
     }
+
+    /* ===== PNG icons (统一风格) ===== */
+    .icon-img{
+      width:20px;
+      height:20px;
+      object-fit:contain;
+      display:block;
+    
+      /* 让黑色线条 PNG 在深底变成白色 */
+      filter: invert(1) brightness(1.05);
+      opacity:.95;
+    }
+    
+    .ico .icon-img{ width:18px; height:18px; }
+    
+    .item:hover .appicon .icon-img{
+      /* hover 给一点偏黄的感觉（更像品牌点缀） */
+      filter: invert(1) sepia(1) saturate(12) hue-rotate(5deg) brightness(1.05);
+    }
+    
+    .pill:hover .ico .icon-img{
+      filter: invert(1) sepia(1) saturate(12) hue-rotate(5deg) brightness(1.05);
+    }
   </style>
 </head>
 
@@ -392,7 +415,9 @@
                data-en="Consulting"></div>
           <div class="pills">
             <a class="pill primary" href="./contact.vcf">
-              <span class="ico">𖠎</span>
+              <span class="ico">
+                <img class="icon-img" src="./person.png" alt="" aria-hidden="true">
+              </span>
               <span data-zh="儲存聯絡人" data-en="Save Contact"></span>
             </a>
           </div>
@@ -406,7 +431,9 @@
           <div class="list">
             <a class="item" href="tel:+886277569435">
               <div class="item-left">
-                <div class="appicon">☎︎</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./direct.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div data-zh="專線" data-en="Direct"></div>
                   <div class="subtext">+886 2 7756 9435</div>
@@ -417,7 +444,9 @@
 
             <a class="item" href="tel:+886227578888">
               <div class="item-left">
-                <div class="appicon">☏</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./tel.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div data-zh="代表號" data-en="Tel"></div>
                   <div class="subtext">+886 2 2757 8888</div>
@@ -428,7 +457,9 @@
 
             <a class="item" href="mailto:Zech.WH.Wang@tw.ey.com">
               <div class="item-left">
-                <div class="appicon">✉</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./email.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div data-zh="信箱" data-en="E-mail"></div>
                   <div class="subtext">Zech.WH.Wang@tw.ey.com</div>
@@ -439,7 +470,9 @@
 
             <a class="item" href="https://line.me/R/ti/p/MEqkvHs-qV" target="_blank" rel="noopener">
               <div class="item-left">
-                <div class="appicon">⌨︎</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./line.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div>LINE</div>
                   <div class="subtext" data-zh="安永EY Taiwan" data-en="EY Taiwan"></div>
@@ -450,7 +483,9 @@
 
             <a class="item" href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E5%9F%BA%E9%9A%86%E8%B7%AF%E4%B8%80%E6%AE%B5333%E8%99%9F8%E6%A8%93" target="_blank" rel="noopener">
               <div class="item-left">
-                <div class="appicon">ꚰ</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./location.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div data-zh="地址" data-en="Address"></div>
                   <div class="subtext" data-zh="台北市信義區基隆路一段333號8樓" data-en="8F, No.333, Sec.1, Keelung Rd., Xinyi Dist., Taipei"></div>
@@ -461,7 +496,9 @@
 
             <a class="item" href="https://www.ey.com" target="_blank" rel="noopener">
               <div class="item-left">
-                <div class="appicon">🔗</div>
+                <div class="appicon">
+                  <img class="icon-img" src="./link.png" alt="" aria-hidden="true">
+                </div>
                 <div>
                   <div data-zh="官方網站" data-en="Official Website"></div>
                   <div class="subtext">ey.com</div>
