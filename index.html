@@ -83,14 +83,24 @@
     .bg{
       position:absolute; inset:0;
       background:
-        radial-gradient(900px 520px at 50% 18%, rgba(255,255,255,.06), rgba(0,0,0,.55) 55%, rgba(0,0,0,.78)),
-        linear-gradient(180deg, rgba(45,45,57,.15), rgba(0,0,0,.58) 45%, rgba(0,0,0,.86)),
-        url("./EY_logo.jpg");
-      background-size:cover;
-      background-position:center;
-      filter: saturate(1.05) contrast(1.05);
-      transform: scale(1.02);
+        radial-gradient(900px 520px at 20% 10%, rgba(254,230,0,.06), transparent 55%),
+        radial-gradient(900px 520px at 85% 25%, rgba(45,45,57,.65), transparent 60%),
+        linear-gradient(180deg, #0a0b14 0%, #0b0d17 45%, #070810 100%);
+      transform:scale(1.02);
       z-index:-2;
+    }
+    
+    /* subtle grid texture */
+    .bg:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity:.10;
+      mix-blend-mode: overlay;
+      pointer-events:none;
     }
 
     .inner{ position:relative; padding:18px 16px 18px; }
@@ -197,7 +207,7 @@
       font-size:13px;
       line-height:1.55;
       text-shadow: 0 14px 34px rgba(0,0,0,.55);
-      max-width: 30ch;
+      white-space: nowrap;
     }
 
     .pills{
@@ -356,6 +366,25 @@
     }
     
     .pill:hover .ico .icon-img{
+      filter: invert(1) sepia(1) saturate(12) hue-rotate(5deg) brightness(1.05);
+    }
+
+    /* ===== topbar language icon ===== */
+    .btn-icon{
+      overflow: hidden; /* 防止 PNG 畫布太大看起來像背景 */
+    }
+    
+    .btn-icon img{
+      width:18px;
+      height:18px;
+      display:block;
+      object-fit:contain;
+      filter: invert(1) brightness(1.05);
+      opacity:.95;
+      pointer-events:none;
+    }
+    
+    .btn-icon:hover img{
       filter: invert(1) sepia(1) saturate(12) hue-rotate(5deg) brightness(1.05);
     }
   </style>
