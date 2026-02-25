@@ -53,7 +53,7 @@
       overflow:hidden;
       box-shadow:var(--shadow);
       border:1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background: transparent;
       min-height: 760px;
       isolation:isolate;
     }
@@ -81,30 +81,25 @@
 
     /* ===== Tech dark background (consulting style) ===== */
     .bg{
-      position:absolute; 
+      position:absolute;
       inset:0;
     
       background:
-        /* subtle EY yellow glow */
         radial-gradient(
-          900px 500px at 15% -10%, 
-          rgba(254,230,0,.05), 
+          900px 600px at 20% 10%,
+          rgba(254,230,0,.08),
+          transparent 65%
+        ),
+        radial-gradient(
+          900px 600px at 80% 20%,
+          rgba(90,120,255,.08),
           transparent 70%
         ),
-    
-        /* cool tech blue balance */
-        radial-gradient(
-          800px 500px at 85% 10%, 
-          rgba(120,160,255,.05), 
-          transparent 75%
-        ),
-    
-        /* main dark gradient */
         linear-gradient(
-          180deg, 
-          #0c0f1a 0%, 
-          #0a0d16 45%, 
-          #07090f 100%
+          180deg,
+          #111425 0%,
+          #0d1120 40%,
+          #080b16 100%
         );
     
       z-index:-2;
@@ -119,15 +114,15 @@
     
       background:
         linear-gradient(
-          120deg,
+          110deg,
           transparent 0%,
-          rgba(255,255,255,.03) 45%,
           rgba(255,255,255,.05) 48%,
-          rgba(255,255,255,.03) 52%,
-          transparent 60%
+          rgba(255,255,255,.08) 50%,
+          rgba(255,255,255,.05) 52%,
+          transparent 65%
         );
     
-      opacity:.35;
+      opacity:.45;
       pointer-events:none;
     }
 
