@@ -177,25 +177,6 @@
       filter: contrast(1.04) saturate(1.02);
     }
 
-    /* status badge (small accent) */
-    .badge{
-      position:absolute;
-      right:10px; bottom:10px;
-      width:34px; height:34px;
-      border-radius:999px;
-      background: rgba(18, 21, 33, .70);
-      border: 1px solid rgba(255,255,255,.25);
-      box-shadow: 0 12px 28px rgba(0,0,0,.40);
-      display:grid; place-items:center;
-      backdrop-filter: blur(12px);
-    }
-    .badge .dot{
-      width:18px; height:18px;
-      border-radius:999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(254,230,0,.14);
-    }
-
     .name{
       margin-top:16px;
       font-size:30px;
@@ -404,7 +385,6 @@
         <div class="profile">
           <div class="avatar-wrap">
             <img class="avatar" src="./EY_logo.jpg" alt="avatar" />
-            <div class="badge" aria-hidden="true"><div class="dot"></div></div>
           </div>
 
           <div class="name" data-zh="王文熙" data-en="Zech Wang"></div>
